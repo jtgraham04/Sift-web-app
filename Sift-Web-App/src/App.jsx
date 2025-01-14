@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Login from './pages/login'
+import Register from './pages/register'
+import MajorSkillsPrompt from './pages/MajorSkillPrompt'
+import Account from './pages/account'
+import Home from './pages/home'
+import MapPage from './pages/MapPage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      {/* Simple header navbar */}
+      <header style={styles.header}>
+        <Link to="/" style={styles.logo}>MentoReach</Link>
+        <nav style={styles.nav}>
+          <Link to="/" style={styles.navLink}>Login</Link>
+          <Link to="/register" style={styles.navLink}>Sign Up</Link>
+          <Link to="/home" style={styles.navLink}>Home</Link>
+          <Link to="/account" style={styles.navLink}>Account</Link>
+          <Link to="/map" style={styles.navLink}>Map</Link>
+        </nav>
+      </header>
+      
+      {/* Define your routes */}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/prompt" element={<MajorSkillsPrompt />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/map" element={<MapPage />} />
+      </Routes>
+    </BrowserRouter>
   )
+}
+
+const styles = {
+  header: {
+    backgroundColor: '#333333', // Charcoal
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0.5rem 1rem'
+  },
+  logo: {
+    color: '#FAF3E0', // Cream-ish text
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    fontSize: '1.2rem',
+    marginRight: '2rem'
+  },
+  nav: {
+    display: 'flex',
+    gap: '1rem'
+  },
+  navLink: {
+    color: '#F5F5DC', // Light Beige
+    textDecoration: 'none'
+  }
 }
 
 export default App
