@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       {/* Simple header navbar */}
       <header style={styles.header}>
-        <Link to="/" style={styles.logo}>MentoReach</Link>
+        <Link to="/" style={styles.logo}>SIFT</Link>
         <nav style={styles.nav}>
           <Link to="/" style={styles.navLink}>Login</Link>
           <Link to="/register" style={styles.navLink}>Sign Up</Link>
@@ -43,7 +43,7 @@ const styles = {
     padding: '0.5rem 1rem'
   },
   logo: {
-    color: '#FAF3E0', // Cream-ish text
+    color: '#FFFFFF', // Cream-ish text
     textDecoration: 'none',
     fontWeight: 'bold',
     fontSize: '1.2rem',
@@ -54,7 +54,7 @@ const styles = {
     gap: '1rem'
   },
   navLink: {
-    color: '#F5F5DC', // Light Beige
+    color: '#FFFFFF', // Light Beige
     textDecoration: 'none'
   }
 }
