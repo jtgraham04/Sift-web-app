@@ -6,8 +6,6 @@ import MajorSkillsPrompt from './pages/MajorSkillPrompt';
 import Account from './pages/account';
 import Home from './pages/home';
 import MapPage from './pages/MapPage';
-import HomeComponent from './pages/home.jsx'
-import LoginComponent from './pages/login.jsx' 
 
 
 

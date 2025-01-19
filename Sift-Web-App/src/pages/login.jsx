@@ -33,7 +33,7 @@ function Login() {
         // Handle successful login
         alert("Login successful!");
         // Optionally store token: localStorage.setItem("token", data.token);
-        navigate("/"); // or wherever you want to redirect the user
+        navigate("/home"); // or wherever you want to redirect the user
       } else {
         // Handle errors from the backend
         setError(data.error || "Login failed. Please try again.");
@@ -48,7 +48,7 @@ function Login() {
     <div className="container">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
-        <label>Username:</label>
+        <label>Username or Email:</label>
         <input
           type="text"
           value={identifier}
