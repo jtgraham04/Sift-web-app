@@ -1,24 +1,29 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require("./config/db");
+const mongoose = require("mongoose");
 const cors = require("cors");
 
-const authRoutes = require("./routes/Auth");
-const userRoutes = require("./routes/user");
-const jobRoutes = require("./routes/jobs");
+// Import your auth routes
+
+
 
 const app = express();
+const PORT = process.env.PORT || 5002;
 
-// Middleware
+app.use(cors());
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5177", credentials: true }));
 
+// Connect to MongoDB
+mongoose
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
-// Routes
+// Use auth routes under /api/auth
+const authRoutes = require('./routes/Auth');
 app.use("/api/auth", authRoutes);
-app.use("/api/user", userRoutes);
-app.use("/api/jobs", jobRoutes);
 
-// Server startup
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

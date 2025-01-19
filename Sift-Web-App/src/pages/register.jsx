@@ -13,7 +13,7 @@ function Register() {
 
     try {
       // Call the backend API to create an account
-      const response = await fetch("http://localhost:5002/api/auth/signup", {
+      const response = await fetch("http://localhost:5002/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function Register() {
       if (response.ok) {
         // Redirect to the next step (e.g., major & skills prompt)
         alert("Account created successfully!");
-        navigate("/prompt");
+        navigate("/");
       } else {
         // Handle errors from the backend
         setError(data.error || "Failed to create account. Please try again.");

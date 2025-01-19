@@ -39,13 +39,13 @@ const styles = {
   },
   jobList: {
     width: '30%',
-    backgroundColor: '#F5F5DC', // Light Beige
+    backgroundColor: '#333333', // Light Beige
     padding: '1rem',
     overflowY: 'auto'
   },
   mapArea: {
     width: '70%',
-    backgroundColor: '#AFC7D0', // Light Blue with Grey Hue
+    backgroundColor: '#FFFFFF', // Light Blue with Grey Hue
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

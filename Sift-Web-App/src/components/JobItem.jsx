@@ -13,7 +13,7 @@ function JobItem({ job }) {
 
 const styles = {
   card: {
-    backgroundColor: '#FAF3E0', // Cream
+    backgroundColor: '#000000',
     marginBottom: '1rem',
     padding: '1rem',
     borderRadius: '6px',

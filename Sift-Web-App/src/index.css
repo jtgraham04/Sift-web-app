@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #161616; /* Light Beige background */
+  background-color: #333333; /* Light Beige background */
   font-family: Arial, sans-serif;
   color: #ffffff;
 }
@@ -16,7 +16,7 @@ body {
   max-width: 600px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #3e3e3e; /* Cream */
+  background-color: #333333; /* Cream */
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
