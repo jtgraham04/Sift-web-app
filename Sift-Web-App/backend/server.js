@@ -20,9 +20,9 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Use auth routes under /api/auth
-const authRoutes = require('./backend/routes/Auth');
+const authRoutes = require('./routes/Auth');
 app.use("/api/auth", authRoutes);
-const questionnaireRoutes = require('./backend/routes/questionnare');
+const questionnaireRoutes = require('./routes/questionnare');
 
 // Use the questionnaire API
 app.use('/api/questionnaire', questionnaireRoutes);
