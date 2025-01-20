@@ -1,4 +1,4 @@
-require('dotenv').config({ path: './gitignore.env' });
+require('dotenv').config({ });
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -20,9 +20,9 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Use auth routes under /api/auth
-const authRoutes = require('./routes/Auth');
+const authRoutes = require('../backend/routes/Auth');
 app.use("/api/auth", authRoutes);
-const questionnaireRoutes = require('./routes/questionnare');
+const questionnaireRoutes = require('../backend/routes/questionnare');
 
 // Use the questionnaire API
 app.use('/api/questionnaire', questionnaireRoutes);
