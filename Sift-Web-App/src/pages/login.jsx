@@ -14,7 +14,7 @@ function Login() {
 
     try {
       // Call the backend API to log in
-      const response = await fetch('http://192.168.1.9:5002/auth/login', {
+      const response = await fetch("http://localhost:5002/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ function Login() {
         // Handle successful login
         alert("Login successful!");
         // Optionally store token: localStorage.setItem("token", data.token);
-        navigate("/home"); // or wherever you want to redirect the user
+        navigate("/"); // or wherever you want to redirect the user
       } else {
         // Handle errors from the backend
         setError(data.error || "Login failed. Please try again.");

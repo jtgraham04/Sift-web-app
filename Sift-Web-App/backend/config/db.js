@@ -1,10 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const dbURL = 'mongodb://192.168.1.9:27017/Sift';
 mongoose
-  .connect(dbURL, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log('Database connected'))
-  .catch((err) => console.error('Database connection error:', err));
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
+module.exports = mongoose;
