@@ -22,6 +22,11 @@ mongoose
 // Use auth routes under /api/auth
 const authRoutes = require('./routes/Auth');
 app.use("/api/auth", authRoutes);
+const questionnaireRoutes = require('./routes/questionnare');
+
+// Use the questionnaire API
+app.use('/api/questionnaire', questionnaireRoutes);
+
 
 
 app.listen(PORT, () => {

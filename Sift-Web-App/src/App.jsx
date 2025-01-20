@@ -6,6 +6,7 @@ import MajorSkillsPrompt from './pages/MajorSkillPrompt';
 import Account from './pages/account';
 import Home from './pages/home';
 import MapPage from './pages/MapPage';
+import QuestionnaireForm from './pages/questionnareform';
 
 
 
@@ -21,6 +22,7 @@ function App() {
             <Link to="/home" style={styles.navLink}>Home</Link>
             <Link to="/account" style={styles.navLink}>Account</Link>
             <Link to="/map" style={styles.navLink}>Map</Link>
+            <Link to="/survey" style={styles.navLink}>Survey</Link>
           </nav>
           <div style={styles.headerright}>
             <Link to="/login" style={styles.button}>Login</Link>
@@ -37,6 +39,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/survey" element={<QuestionnaireForm />} />
+
           
         </Routes>
       </BrowserRouter>
