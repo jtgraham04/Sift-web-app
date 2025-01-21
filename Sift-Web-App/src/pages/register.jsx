@@ -13,7 +13,7 @@ function Register() {
 
     try {
       // Call the backend API to create an account
-      const response = await fetch("http://localhost:5002/api/auth/register", {
+      const response = await fetch("https://sift-web-app-fbrm.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

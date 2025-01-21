@@ -2,7 +2,7 @@ require('dotenv').config({ });
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
+app.use(cors({ origin: 'https://jtgraham04.github.io/Sift-web-app/' }));
 // Import your auth routes
 
 

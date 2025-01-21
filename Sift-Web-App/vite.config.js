@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5002', // Backend URL
+        target: 'https://sift-web-app-fbrm.onrender.com', // Backend URL
         changeOrigin: true, // Change the origin of the host header to the target URL
         secure: false, // If you're using HTTPS and have self-signed certificates
       },

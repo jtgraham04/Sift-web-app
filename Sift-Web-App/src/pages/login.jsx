@@ -14,7 +14,7 @@ function Login() {
 
     try {
       // Call the backend API to log in
-      const response = await fetch("http://localhost:5002/api/auth/login", {
+      const response = await fetch("https://sift-web-app-fbrm.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
