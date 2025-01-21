@@ -10,7 +10,11 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5002;
 
-app.use(cors({ origin: 'https://jtgraham04.github.io/Sift-web-app/' }));
+app.use(cors({
+  origin: ['https://jtgraham04.github.io/Sift-web-app/', 'http://localhost:5002'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}));
 app.use(express.json());
 
 // Connect to MongoDB
