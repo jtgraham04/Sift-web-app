@@ -33,6 +33,6 @@ app.use('/api/questionnaire', questionnaireRoutes);
 
 
 
-app.listen(3000,'0.0.0.0', function() {
+app.listen(PORT,'0.0.0.0', function() {
   console.log('Listening to port:  ' + 5002);
 });
