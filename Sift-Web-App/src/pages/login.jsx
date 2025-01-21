@@ -31,9 +31,10 @@ function Login() {
 
       if (response.ok) {
         // Handle successful login
-        alert("Login successful!");
-        // Optionally store token: localStorage.setItem("token", data.token);
-        navigate("/"); // or wherever you want to redirect the user
+        
+        alert("Login successful!")
+        navigate("/home");
+        localStorage.setItem('token', data.token); // or wherever you want to redirect the user
       } else {
         // Handle errors from the backend
         setError(data.error || "Login failed. Please try again.");

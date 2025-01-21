@@ -7,10 +7,9 @@ import Account from './pages/account';
 import Home from './pages/home';
 import MapPage from './pages/MapPage';
 import QuestionnaireForm from './pages/questionnareform';
+import ProtectedRoute from './components/ProtectedRoute';
+import LogoutButton from './components/LogoutButton'
 
-
-
-  
 function App() {
   return (
     <div style={styles.container}>
@@ -27,21 +26,42 @@ function App() {
           <div style={styles.headerright}>
             <Link to="/login" style={styles.button}>Login</Link>
             <Link to="/register" style={styles.button}>Signup</Link>
+            <LogoutButton /> {/* Add Logout Button */}
           </div>
         </header>
 
         {/* Define your routes */}
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/prompt" element={<MajorSkillsPrompt />} />
-          <Route path="/account" element={<Account />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/map" element={<MapPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/survey" element={<QuestionnaireForm />} />
-
           
+          {/* Protected Routes */}
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <Account />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/map"
+            element={
+              <ProtectedRoute>
+                <MapPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/survey"
+            element={
+              <ProtectedRoute>
+                <QuestionnaireForm />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>
@@ -66,7 +86,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '0.5rem 1rem',
-   borderBottom: '1px solid rgb(212, 212, 212)',
+    borderBottom: '1px solid rgb(212, 212, 212)',
   },
   logo: {
     color: '#e3cba0', // Cream-ish text
@@ -77,7 +97,7 @@ const styles = {
   nav: {
     display: 'flex',
     gap: '2rem',
-    padding: '1rem 1rem 1rem 11rem'
+    padding: '1rem 1rem 1rem 11rem',
   },
   navLink: {
     color: '#FFFFFF',
