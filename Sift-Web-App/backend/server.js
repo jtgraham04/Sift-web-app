@@ -2,7 +2,7 @@ require('dotenv').config({ });
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-app.use(cors({ origin: 'https://jtgraham04.github.io/Sift-web-app/' }));
+
 // Import your auth routes
 
 
@@ -10,7 +10,7 @@ app.use(cors({ origin: 'https://jtgraham04.github.io/Sift-web-app/' }));
 const app = express();
 const PORT = process.env.PORT || 5002;
 
-app.use(cors());
+app.use(cors({ origin: 'https://jtgraham04.github.io/Sift-web-app/' }));
 app.use(express.json());
 
 // Connect to MongoDB
