@@ -10,11 +10,7 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5002;
 
-app.use(cors({
-  origin: ['https://jtgraham04.github.io/Sift-web-app/', 'http://localhost:5002'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-}));
+app.use(cors({ origin: 'https://jtgraham04.github.io/Sift-web-app/' }));
 app.use(express.json());
 
 // Connect to MongoDB
@@ -33,6 +29,6 @@ app.use('/api/questionnaire', questionnaireRoutes);
 
 
 
-app.listen(PORT,'0.0.0.0', function() {
-  console.log('Listening to port:  ' + 5002);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

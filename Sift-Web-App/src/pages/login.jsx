@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -13,31 +12,30 @@ function Login() {
     setError(""); // Reset any previous error
 
     try {
-      // Call the backend API to log in
-      const response = await fetch("https://sift-web-app-fbrm.onrender.com/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          // In your backend, if "identifier" can be username OR email,
-          // pick one field. For example, if the backend checks "username" first:
-          username: identifier,
-          password,
-        }),
-      });
+      const response = await fetch(
+        "https://sift-web-app-fbrm.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: identifier, // Or use "email" if required by the backend
+            password,
+          }),
+        }
+      );
 
       const data = await response.json();
 
       if (response.ok) {
         // Handle successful login
-        
-        alert("Login successful!")
-        navigate("/home");
-        localStorage.setItem('token', data.token); // or wherever you want to redirect the user
+        alert("Login successful!");
+        localStorage.setItem("token", data.token); // Store the token
+        navigate("/home"); // Redirect to home
       } else {
         // Handle errors from the backend
-        setError(data.error || "Login failed. Please try again.");
+        setError(data.error || data.message || "Login failed. Please try again.");
       }
     } catch (err) {
       console.error("Network error:", err);
